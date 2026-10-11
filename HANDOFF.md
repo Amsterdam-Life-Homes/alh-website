@@ -5,6 +5,7 @@ Stand van zaken op 30 september 2026. Lees daarna eerst `CLAUDE.md` en `docs/des
 ## Huidige status
 
 - **Live:** https://alh-website.vercel.app (Vercel-project `alh-website`, team `alh-wc`). Elke merge naar `main` wordt automatisch gedeployed.
+- **GitHub:** de repo staat sinds oktober 2026 op `Amsterdam-Life-Homes/alh-website` (was `ALH-WC/alh-website`), in de organisatie van het "It's you. It's us."-account. Vercel is op 12 oktober opnieuw aan die repo gekoppeld. Compare-link: https://github.com/Amsterdam-Life-Homes/alh-website/compare/main...feat/cms-seo-import
 - **Branch:** `main` bevat alles (laatste merge: PR #134, de Next.js 16 / Sanity 6-upgrade). Er zijn geen open PR's. De branch `feat/one-inter-size` was een kortlopende zijbranch voor #132 en #133 en kan weg.
 - **Indexering:** alle pagina's staan nog op `noindex, follow` tot de domeinoverstap naar amsterdamlifehomes.com.
 - **Feedbackronde van 26 t/m 29 september:** afgerond en live.
