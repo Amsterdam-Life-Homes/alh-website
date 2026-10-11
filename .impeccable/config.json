@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "bounce-easing",
+        "value": "cubic-bezier(0.2, 0.9, 0.3, 1.2)",
+        "files": [
+          "src/components/CityMap.module.css"
+        ],
+        "createdAt": "2026-10-11T23:00:23.358Z",
+        "reason": "Blog map hover card: the blog is approved and must not be restyled"
+      }
+    ]
+  }
+}

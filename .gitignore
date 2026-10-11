@@ -45,3 +45,7 @@ map-preview.html
 # Per-machine Claude/Codex settings (Impeccable design-check hooks live here)
 .claude/settings.local.json
 .codex/
+
+# Impeccable per-machine config and live-mode state (shared detector ignores live in .impeccable/config.json)
+.impeccable/config.local.json
+.impeccable/live/
