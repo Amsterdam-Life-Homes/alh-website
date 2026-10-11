@@ -36,3 +36,12 @@ yarn-error.log*
 # cached open geodata for scripts/build-city-map.mjs (refetch with --refetch)
 scripts/.cache-*.json
 map-preview.html
+
+# Impeccable engine binaries (platform-specific, 16 MB each; the launcher
+# downloads them when missing, or re-run `npx impeccable install`)
+.claude/skills/impeccable/scripts/bin/
+.agents/skills/impeccable/scripts/bin/
+
+# Per-machine Claude/Codex settings (Impeccable design-check hooks live here)
+.claude/settings.local.json
+.codex/

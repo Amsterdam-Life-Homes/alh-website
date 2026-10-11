@@ -3,8 +3,8 @@
 Next.js 16 + Sanity 6 site (Node.js >=22.12 required, pinned in `engines`; there is no `lint` script since Next 16 removed `next lint`, use `npm run typecheck`) serving the full ALH website: /, /renting, /buying, /letting, /b2b, /about, /reviews, /contact, and the blog at /blog. Replaces the Framer site page by page; every page ships `robots: noindex, follow` until the domain cutover, when amsterdamlifehomes.com attaches to this Vercel project and the noindex flags come off.
 
 ## Environment
-- Repo: `ALH-WC/alh-website` (formerly alh-blog). Working branch `feat/cms-seo-import`, PRs to `main`, self-merge allowed.
-- Deploys: Vercel project `alh-website` (team slug `alh-wc`), production at https://alh-website.vercel.app. Every merge to main deploys; gate on `gh api repos/ALH-WC/alh-website/commits/<sha>/status`.
+- Repo: `Amsterdam-Life-Homes/alh-website` (moved from `ALH-WC/alh-website` in Oct 2026; formerly alh-blog). The GitHub organization `Amsterdam-Life-Homes` is owned by the "It's you. It's us." GitHub account, and Vercel is linked to that account (reconnected 12 Oct 2026). Working branch `feat/cms-seo-import`, PRs to `main`, self-merge allowed.
+- Deploys: Vercel project `alh-website` (team slug `alh-wc`), production at https://alh-website.vercel.app. Every merge to main deploys; gate on `gh api repos/Amsterdam-Life-Homes/alh-website/commits/<sha>/status`.
 - Sanity CMS for blog content. The write token lives ONLY in `.env.local` as `SANITY_API_WRITE_TOKEN`; never print it.
 - Workflow for changes: build → verify locally (dev server, 390px mobile included) → commit → push → PR → merge → wait for deploy success → verify on production.
 
