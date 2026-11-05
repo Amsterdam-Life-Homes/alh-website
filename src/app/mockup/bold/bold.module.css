@@ -1,0 +1,395 @@
+/* Mockup "Bold" (weel.nl warmth + theagencyre.nl confidence). Review only.
+   Mixta ships in one cut here: the extra weight is a hairline text-stroke
+   and the italic is the browser's slant, stand-ins for licensed cuts. */
+.page {
+  --esp: #241d16;
+  --brick: #9E3B25;
+  --brickHi: #B24A31;
+  --sand: #EDE6D9;
+  --cream: #F5F0E6;
+  --ink: #4A443D;
+  background: #fff;
+  color: var(--ink);
+}
+.page p {
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+/* type */
+.huge,
+.title {
+  font-family: var(--display);
+  font-weight: 400;
+  color: var(--esp);
+  letter-spacing: -0.03em;
+  -webkit-text-stroke: 0.016em currentColor;
+  text-wrap: balance;
+}
+.huge {
+  font-size: clamp(42px, 5.6vw, 88px);
+  line-height: 1;
+}
+.title {
+  font-size: clamp(38px, 4.2vw, 66px);
+  line-height: 1.02;
+}
+.label,
+.labelLight {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(24px, 2vw, 30px);
+  letter-spacing: -0.01em;
+  color: var(--brick);
+}
+.labelLight {
+  color: #D9876B;
+}
+.rule {
+  display: block;
+  width: 72px;
+  height: 3px;
+  background: var(--brick);
+}
+.lead {
+  max-width: none;
+  color: var(--ink);
+}
+
+/* buttons: square, uppercase, tracked (The Agency) */
+.btnBrick,
+.btnLine {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  padding: 18px 30px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+.btnBrick {
+  background: var(--brick);
+  color: #fff;
+}
+.btnBrick:hover {
+  background: var(--brickHi);
+}
+.btnLine {
+  border: 1px solid currentColor;
+  color: var(--esp);
+}
+.btnLine:hover {
+  background: var(--esp);
+  border-color: var(--esp);
+  color: var(--cream);
+}
+
+/* centered heads */
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  text-align: center;
+  padding: 140px var(--gutter) 110px;
+}
+.center .title {
+  max-width: 18ch;
+}
+.centerBtn {
+  display: flex;
+  justify-content: center;
+  padding: 64px 0 140px;
+}
+
+/* the four colour blocks */
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 0 var(--gutter);
+}
+.block {
+  display: flex;
+  flex-direction: column;
+  background: var(--esp);
+  color: var(--cream);
+}
+.blockBrick {
+  background: var(--brick);
+}
+.blockImg {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+.blockImg img,
+.aboutImg img,
+.cardImg img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.block:hover img,
+.card:hover img {
+  transform: scale(1.05);
+}
+.blockTxt {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 36px 32px 34px;
+}
+.blockName {
+  font-family: var(--display);
+  font-size: 46px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  -webkit-text-stroke: 0.016em currentColor;
+}
+.blockP {
+  flex: 1;
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(245, 240, 230, 0.8);
+}
+.block .btnLine {
+  color: var(--cream);
+  margin-top: 8px;
+}
+.block:hover .btnLine {
+  background: var(--cream);
+  border-color: var(--cream);
+  color: var(--esp);
+}
+
+/* about: sand panel, photo left */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 140px var(--gutter) 0;
+  background: var(--sand);
+}
+.aboutImg {
+  position: relative;
+  min-height: 720px;
+  overflow: hidden;
+}
+.aboutTxt {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 96px 80px;
+  max-width: 640px;
+}
+
+/* guide cards */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding: 0 var(--gutter);
+}
+.card {
+  display: flex;
+  flex-direction: column;
+}
+.cardImg {
+  position: relative;
+  height: 440px;
+  overflow: hidden;
+}
+.flag {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  padding: 10px 18px;
+  background: var(--brick);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.cardTxt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 34px 36px;
+  background: var(--sand);
+}
+.cardT {
+  font-family: var(--display);
+  font-size: 30px;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--esp);
+}
+.arrow {
+  font-size: 30px;
+  color: var(--brick);
+  transition: transform 0.25s ease;
+}
+.card:hover .arrow {
+  transform: translateX(6px);
+}
+
+/* reviews */
+.kind {
+  display: grid;
+  grid-template-columns: 0.9fr 1.3fr;
+  gap: 80px;
+  padding: 120px var(--gutter);
+  border-top: 1px solid #EAE7E1;
+}
+.kindTxt {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  position: sticky;
+  top: 120px;
+  align-self: start;
+}
+.kindPanels {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.panel {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 56px 56px 48px;
+  background: var(--sand);
+}
+.panelQ {
+  font-family: var(--display);
+  font-size: 32px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--esp);
+  -webkit-text-stroke: 0.012em currentColor;
+}
+.panel blockquote {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.75;
+  color: #3a332b;
+}
+.panel figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 30px;
+  color: var(--esp);
+}
+.panel figcaption span {
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brick);
+}
+.logos {
+  padding: 0 0 120px;
+}
+
+/* closing band */
+.close {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  text-align: center;
+  padding: 140px var(--gutter);
+  background: var(--esp);
+  color: rgba(245, 240, 230, 0.78);
+}
+.close .huge {
+  color: var(--cream);
+}
+.close p {
+  max-width: 56ch;
+}
+.close .btnBrick {
+  align-self: center;
+}
+.fine {
+  font-size: 15px;
+  color: rgba(245, 240, 230, 0.5);
+}
+
+/* phones */
+@media (max-width: 900px) {
+  .huge br,
+  .lead br {
+    display: none;
+  }
+  .center {
+    padding: 88px var(--gutter) 64px;
+    gap: 22px;
+  }
+  .blocks {
+    grid-template-columns: 1fr;
+  }
+  .blockImg {
+    height: 220px;
+  }
+  .about {
+    grid-template-columns: 1fr;
+    margin: 88px 0 0;
+  }
+  .aboutImg {
+    min-height: 360px;
+  }
+  .aboutTxt {
+    padding: 56px var(--gutter);
+  }
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .cardImg {
+    height: 280px;
+  }
+  .cardTxt {
+    padding: 26px 22px;
+  }
+  .cardT {
+    font-size: 24px;
+  }
+  .centerBtn {
+    padding: 48px var(--gutter) 88px;
+  }
+  .kind {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding: 80px var(--gutter);
+  }
+  .kindTxt {
+    position: static;
+  }
+  .panel {
+    padding: 36px 24px;
+  }
+  .panelQ {
+    font-size: 26px;
+  }
+  .panel blockquote {
+    font-size: 16px;
+  }
+  .close {
+    padding: 88px var(--gutter);
+  }
+}

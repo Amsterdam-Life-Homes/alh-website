@@ -1,0 +1,398 @@
+/* Mockup "Warm" (weel.nl atmosphere). Review only, never for main. */
+.page {
+  --cream: #F5F0E6;
+  --card: #FBF8F2;
+  --esp: #241d16;
+  --brown: #2E241B;
+  --bronze: #8A7250;
+  --accent: #C89A6A;
+  --ink: #4A443D;
+  --r: 18px;
+  background: var(--cream);
+  color: var(--ink);
+  padding: 0 0 24px;
+}
+
+/* type */
+.big,
+.title,
+.titleSm,
+.titleLight {
+  font-family: var(--display);
+  font-weight: 400;
+  color: var(--esp);
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+.big {
+  font-size: clamp(40px, 5vw, 76px);
+  line-height: 1.02;
+}
+.title {
+  font-size: clamp(38px, 3.8vw, 60px);
+  line-height: 1.04;
+}
+.titleSm {
+  font-size: clamp(30px, 2.6vw, 42px);
+  line-height: 1.08;
+}
+.titleLight {
+  font-size: clamp(38px, 4.2vw, 64px);
+  line-height: 1.04;
+  color: var(--cream);
+}
+.kicker {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--bronze);
+}
+.page p {
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+/* buttons */
+.btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.pill,
+.pillGhost,
+.pillLight {
+  display: inline-flex;
+  align-items: center;
+  padding: 15px 28px;
+  border-radius: 999px;
+  white-space: nowrap;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+.pill {
+  background: var(--esp);
+  color: var(--cream);
+}
+.pill:hover {
+  background: #4a3a2b;
+}
+.pillGhost {
+  border: 1px solid #CFC4B2;
+  color: var(--esp);
+}
+.pillGhost:hover {
+  background: #EDE5D7;
+}
+.pillLight {
+  align-self: flex-start;
+  background: var(--cream);
+  color: var(--esp);
+}
+.pillLight:hover {
+  background: #fff;
+}
+
+/* statement */
+.stmt,
+.close {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 80px;
+  align-items: end;
+  padding: 130px var(--gutter) 110px;
+}
+.stmt {
+  grid-template-columns: 1.7fr 1fr;
+}
+.stmt .big {
+  font-size: clamp(40px, 4.3vw, 70px);
+  white-space: nowrap;
+}
+.stmtSide,
+.closeSide {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 46ch;
+}
+
+/* about */
+.about {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 88px;
+  align-items: center;
+  padding: 0 var(--gutter) 130px;
+}
+.aboutImg {
+  position: relative;
+  aspect-ratio: 4 / 4.4;
+  border-radius: var(--r);
+  overflow: hidden;
+}
+.aboutImg img,
+.card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.aboutTxt {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  max-width: 50ch;
+}
+
+/* services: the dark band with the four names set huge */
+.services {
+  margin: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--esp);
+  border-radius: var(--r);
+  padding: 40px;
+}
+.svc {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 56px 48px;
+  border-radius: 12px;
+  transition: background 0.35s ease;
+}
+.svc:hover {
+  background: #2f261d;
+}
+.svcName {
+  font-family: var(--display);
+  font-size: clamp(48px, 6vw, 96px);
+  line-height: 1;
+  letter-spacing: -0.035em;
+  color: var(--cream);
+  transition: color 0.3s ease;
+}
+.svc:first-child .svcName,
+.svc:hover .svcName {
+  color: var(--accent);
+}
+.svcP {
+  max-width: 42ch;
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(245, 240, 230, 0.72);
+}
+.svcGo {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--cream);
+}
+.svcGo span {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+.svc:hover .svcGo span {
+  transform: translateX(4px);
+}
+
+/* guide: two rounded photo cards with the title over the photo */
+.guide {
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr 1fr;
+  gap: 20px;
+  padding: 130px var(--gutter);
+}
+.card {
+  position: relative;
+  min-height: 520px;
+  border-radius: var(--r);
+  overflow: hidden;
+  color: #fff;
+}
+.card img {
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card:hover img {
+  transform: scale(1.04);
+}
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20, 14, 9, 0) 40%, rgba(20, 14, 9, 0.72) 100%);
+}
+.cardIn {
+  position: absolute;
+  z-index: 1;
+  left: 32px;
+  right: 32px;
+  bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+.tag {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(245, 240, 230, 0.92);
+  color: var(--esp);
+  font-size: 13px;
+  font-weight: 600;
+}
+.cardT {
+  font-family: var(--display);
+  font-size: 32px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.guideCell {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 40px 36px;
+  border-radius: var(--r);
+  background: var(--brown);
+}
+.guideCell .titleSm {
+  color: var(--cream);
+}
+.guideP {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(245, 240, 230, 0.72);
+}
+
+/* reviews: the warm dark band */
+.reviews {
+  margin: 0 var(--gutter);
+  padding: 96px 64px 64px;
+  border-radius: var(--r);
+  background: var(--brown);
+  color: rgba(245, 240, 230, 0.78);
+}
+.revHead {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  align-items: end;
+  padding-bottom: 64px;
+}
+.revHead > div {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+.revRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+.rev {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 36px 32px;
+  border-radius: 14px;
+  background: var(--card);
+  color: var(--ink);
+}
+.rev blockquote {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.revQ {
+  font-family: var(--display);
+  font-size: 25px;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--esp);
+}
+.revB {
+  font-size: 15px;
+  line-height: 1.75;
+}
+.rev figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 15px;
+}
+.rev figcaption b {
+  color: var(--esp);
+  font-weight: 600;
+}
+.rev figcaption span {
+  color: var(--bronze);
+}
+
+.logos {
+  padding: 90px 0 0;
+}
+
+.fine {
+  font-size: 15px;
+  color: #A39889;
+}
+
+/* phones */
+@media (max-width: 900px) {
+  .big br,
+  .titleLight br {
+    display: none;
+  }
+  .stmt,
+  .close,
+  .about,
+  .revHead {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .stmt,
+  .close {
+    padding: 80px var(--gutter) 72px;
+  }
+  .stmt .big {
+    white-space: normal;
+  }
+  .about {
+    padding-bottom: 80px;
+  }
+  .services {
+    grid-template-columns: 1fr;
+    margin: 0 12px;
+    padding: 14px;
+  }
+  .svc {
+    padding: 32px 22px;
+  }
+  .guide {
+    grid-template-columns: 1fr;
+    padding: 80px var(--gutter);
+  }
+  .card {
+    min-height: 380px;
+  }
+  .cardT {
+    font-size: 26px;
+  }
+  .reviews {
+    margin: 0 12px;
+    padding: 56px 18px 18px;
+  }
+  .revHead {
+    padding: 0 6px 40px;
+  }
+  .revRow {
+    grid-template-columns: 1fr;
+  }
+  .rev {
+    padding: 28px 22px;
+  }
+}
